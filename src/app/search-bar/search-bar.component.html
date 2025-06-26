@@ -1,0 +1,40 @@
+<div class="search-bar-absolute search-wrapper" [class.open]="isOpen">
+  <div class="input-wrapper">
+    <input id="searchInput" #inputRef type="text" class="search-input" placeholder="Поисковый запрос"
+      (click)="showFilters()" />
+    <div *ngIf="isFiltersOpen" class="filter-panel-dropdown">
+      <div class="filter-history">
+        <div class="filter-history-title">История</div>
+        <ul class="filter-history-list">
+          <li class="filter-history-item" *ngFor="let item of history">
+            {{item}}
+          </li>
+        </ul>
+      </div>
+      <div class="filter-controls">
+        <div class="filter-group-input">
+          <div class="floating-label-group">
+            <input type="text" id="author" class="filter-author-input" placeholder="Имя или должность" />
+            <label for="author" class="filter-label">Автор</label>
+            <button type="button" class="filter-me-btn">Я</button>
+          </div>
+        </div>
+        <div class="filter-checkboxes">
+          <label><input type="checkbox"> Я участник</label>
+          <label><input type="checkbox"> Строгий поиск</label>
+          <label><input type="checkbox"> В заголовках</label>
+        </div>
+        <span class="filter-group-title">Только</span>
+        <div class="filter-group">
+          <label><input type="checkbox"> Теги</label>
+          <label><input type="checkbox"> Просьбы</label>
+          <label><input type="checkbox"> Контакты</label>
+        </div>
+      </div>
+    </div>
+    <button class="icon-button" (click)="toggleSearch()" aria-label="Поиск">
+      <i class="icon search-icon"></i>
+    </button>
+    <button *ngIf="isOpen" class="find-button" (mousedown)="$event.preventDefault()">Найти</button>
+  </div>
+</div>

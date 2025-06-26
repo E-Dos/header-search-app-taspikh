@@ -1,0 +1,85 @@
+<nav class="header">
+  <button class="menu-btn" (click)="toggleMobileMenu()">
+    <span class="menu-icon"></span>
+  </button>
+
+  <a class="logo" href="#">
+    <img src="assets/image26.png" alt="logo" />
+  </a>
+  <!-- Desktop menu -->
+  <ul class="nav-menu">
+    <li>
+      <a class="nav-link" href="#"><i class="icon link-icon"></i>Ссылки</a>
+    </li>
+    <li>
+      <a class="nav-link" href="#"><i class="icon contacts-icon"></i>Контакты</a>
+    </li>
+    <li>
+      <a class="nav-link" href="#"><i class="icon tag-icon"></i>Теги</a>
+    </li>
+    <li>
+      <a class="nav-link" href="#"><i class="icon favorites-icon"></i>Избранное</a>
+    </li>
+    <li>
+      <a class="nav-link" href="#"><i class="icon history-icon"></i>Посещения</a>
+    </li>
+  </ul>
+
+  <ul class="nav-actions">
+    <li>
+      <app-search-bar></app-search-bar>
+    </li>
+    <li>
+      <a href="#"><i class="icon add-icon"></i></a>
+    </li>
+  </ul>
+
+  <ul class="nav-actions-right">
+    <li>
+      <a class="notifications">
+        <i class="icon notifications-icon"></i>
+        <span class="badge">32</span>
+      </a>
+    </li>
+    <li>
+      <div class="avatar">
+        <img src="assets/AVA.png" />
+      </div>
+    </li>
+  </ul>
+  <!-- Mobile menu -->
+  <div class="nav-actions-mobile">
+    <li>
+      <a href="#"><i class="icon add-icon"></i></a>
+    </li>
+    <li>
+      <a href="#"><i class="icon history-icon"></i></a>
+    </li>
+    <li>
+      <app-search-bar-mobile></app-search-bar-mobile>
+    </li>
+    <div class="notifications">
+      <i class="icon notifications-icon"></i>
+    </div>
+  </div>
+
+  <div class="mobile-menu" [class.show]="mobileMenuOpen">
+    <li>
+      <a class="nav-link" href="#"><i class="icon link-icon"></i>Ссылки</a>
+    </li>
+    <li>
+      <a class="nav-link" href="#"><i class="icon contacts-icon"></i>Контакты</a>
+    </li>
+    <li>
+      <a class="nav-link" href="#"><i class="icon tag-icon"></i>Теги</a>
+    </li>
+    <li>
+      <a class="nav-link" href="#"><i class="icon favorites-icon"></i>Избранное</a>
+    </li>
+
+    <div class="avatar">
+      <img src="assets/AVA.png" />
+      <span>Username - Position</span>
+    </div>
+  </div>
+</nav>

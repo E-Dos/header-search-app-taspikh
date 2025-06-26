@@ -1,0 +1,64 @@
+<div class="search-wrapper" [class.open]="isMobSearchOpen">
+  <div *ngIf="!isMobSearchOpen" class="search-mobile-loupe-row">
+    <button class="icon-button" (click)="openSearch()" aria-label="Поиск">
+      <i class="icon search-icon"></i>
+    </button>
+  </div>
+  <div class="search-mobile-container">
+    <ng-container *ngIf="isMobSearchOpen">
+      <div class="search-top-row">
+        <button class="icon-back-button" (click)="closeSearch()" aria-label="Назад">
+          <i class="icon back-icon"></i>
+        </button>
+        <input class="search-main-input" type="text" placeholder="Поиск" #inputRef />
+      </div>
+
+      <div class="filter-mobile-panel">
+        <div class="filter-group-input">
+          <div class="floating-label-group">
+            <input type="text" id="author" class="filter-author-input" placeholder="Имя или должность" />
+            <label for="author" class="filter-label">Автор</label>
+            <button type="button" class="filter-me-btn">Я</button>
+          </div>
+        </div>
+
+        <div class="filter-checkboxes-mobile">
+          <label class="custom-checkbox">
+            <input type="checkbox" checked />
+            <span class="checkmark"></span>
+            Я участник
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" checked />
+            <span class="checkmark"></span>
+            В заголовках
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" checked />
+            <span class="checkmark"></span>
+            Строгий поиск
+          </label>
+        </div>
+
+        <div class="filter-group-title">Только</div>
+        <div class="filter-checkboxes-mobile">
+          <label class="custom-checkbox">
+            <input type="checkbox" checked />
+            <span class="checkmark"></span>
+            Теги
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" checked />
+            <span class="checkmark"></span>
+            Просьбы
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" checked />
+            <span class="checkmark"></span>
+            Контакты
+          </label>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
